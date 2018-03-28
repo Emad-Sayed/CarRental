@@ -1,0 +1,6 @@
+﻿Enable-Migrations -ContextTypeName MyDBContext -MigrationsDirectory Migrations\MyDB
+add-migration -ConfigurationTypeName  CarRental.Migrations.MyEdits.Configuration "RentedCars_Adding"
+update-database -ConfigurationTypeName  CarRental.Migrations.MyEdits.Configuration 
+
+"Arg3ha l state mo3yna w al3'e el b3daha"
+update-database -ConfigurationTypeName  CarRental.Migrations.MyEdits.Configuration  -TargetMigration:Feedback_Adding
