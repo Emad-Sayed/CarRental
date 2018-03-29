@@ -1,7 +1,269 @@
 ﻿
 @{
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+//Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WHEELS</title>
+
+    <!-- My CSS -->
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/WelcomePage/css/mystyle.css">-->
+    @Styles.Render("~/Content/WelcomePagee/css/mystyle.css")
+
+    <!--Carsoul CSS and js-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    @Styles.Render("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    @Scripts.Render("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    @Styles.Render("~/vendor/bootstrap/css/bootstrap.min.css")
+
+    <!-- Custom fonts for this template -->
+    <!--<link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>-->
+    @Styles.Render("~/vendor/font-awesome/css/font-awesome.min.css")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Cabin:700")
+
+    <!-- Custom styles for this template -->
+    <!--<link href="~/Content/WelcomePage/css/grayscale.min.css" rel="stylesheet">-->
+    @Styles.Render("~/Content/WelcomePagee/css/grayscale.min.css")
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">WHEELS RENTAL SYSTEM</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#download">Let's Try Rent Your Car</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Join Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="masthead">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">WHEELS</h1>
+                        <p class="intro-text">A free, Website to Rent any Car You Need . Don't miss Your Chance and Rent Your Dream Car.</p>
+                        <a href="#about" class="btn btn-circle js-scroll-trigger">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About WHEELS</h2>
+                    <p>WHEELS is a free website that enable you to rent any car you need from our Categories. It is very easy , simply choose your favourite category . show the car details and then check if it available. choose the best payment method you like it and feel free to try our best cars.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Try our Wheels Slider Section -->
+    <section id="download" class="carousel slide download-section">
+
+        <!--Slider-->
+        <div id="myslide" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myslide" data-slide-to="0" class="active"></li>
+                <li data-target="#myslide" data-slide-to="1"></li>
+                <li data-target="#myslide" data-slide-to="2"></li>
+                <li data-target="#myslide" data-slide-to="3"></li>
+                <li data-target="#myslide" data-slide-to="4"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="~/images/ford.jpg" alt="ford">
+                    <div class="carousel-caption">
+                        <h1>Welcome to WHEELS !</h1>
+                        <h2>FORD</h2>
+                        <p>Ford is always so fast! . Let's Try Our Car Rental System Service .</p>
+                        <a href="#" class="btn btn-default btn-lg">Visit Home Page</a>
+                    </div>
+
+                </div>
+
+
+                <div class="item">
+
+                    <img src="~/images/mercedes.jpg" alt="mercedes">
+                    <div class="carousel-caption">
+                        <h1>Welcome to WHEELS !</h1>
+                        <h2>MERCEDES</h2>
+                        <p>Thank you, Germany! . Let's Try Our Car Rental System Service .</p>
+                        <a href="#" class="btn btn-default btn-lg">Visit Home Page</a>
+                    </div>
+
+                </div>
+
+                <div class="item">
+
+                    <img src="~/images/ferrari.jpg" alt="Ferrari">
+                    <div class="carousel-caption">
+                        <h1>Welcome to WHEELS !</h1>
+                        <h2>FERRARI</h2>
+                        <p>We love the Ferrari Cars! . Let's Try Our Car Rental System Service .</p>
+                        <a href="#" class="btn btn-default btn-lg">Visit Home Page</a>
+                    </div>
+
+                </div>
+
+
+                <div class="item">
+
+                    <img src="~/images/action-automotive-car-544542.jpg" alt="Ford">
+                    <div class="carousel-caption ford2">
+                        <h1>Welcome to WHEELS !</h1>
+                        <h2>FORD</h2>
+                        <p>We love Ford! . Let's Try Our Car Rental System Service .</p>
+                        <a href="#" class="btn btn-default btn-lg">Visit Home Page</a>
+                    </div>
+
+                </div>
+
+
+                <div class="item">
+
+                    <img src="~/images/auto-automobile-automotive-305070.jpg" alt="Black">
+                    <div class="carousel-caption">
+                        <h1>Welcome to WHEELS !</h1>
+                        <h2>BLACK BMW</h2>
+                        <p>B M W! . Let's Try Our Car Rental System Service .</p>
+                        <a href="#" class="btn btn-default btn-lg">Visit Home Page</a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myslide" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="right carousel-control" href="#myslide" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Start To Join Us By Register Your Data Or Login</h2>
+                    <p>
+                        Feel free to Choose Your Car.
+                        Choose Your Payment. make Your Choice!
+                    </p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-default btn-lg">
+                                <i class="fa fa-user-plus fa-fw"></i>
+                                <span class="network-name">REGISTER</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-default btn-lg">
+                                <i class="fa fa-unlock fa-fw"></i>
+                                <span class="network-name">LOGIN</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
+                                <i class="fa fa-paper-plane-o fa-fw"></i>
+                                <span class="network-name">FEEDBACK</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2018</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!--<script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    @Scripts.Render("~/vendor/jquery/jquery.min.js")
+    @Scripts.Render("~/vendor/bootstrap/js/bootstrap.bundle.min.js")
+
+    <!-- Plugin JavaScript -->
+    <!--<script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>-->
+    @Scripts.Render("~/vendor/jquery-easing/jquery.easing.min.js")
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>-->
+    @Scripts.Render("https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false")
+
+    <!-- Custom scripts for this template -->
+    <!--<script src="~/Scripts/WelcomePage/js/grayscale.min.js"></script>-->
+    @Scripts.Render("~/Scripts/WelcomePagee/js/grayscale.min.js")
+
+</body>
+
+</html>
 

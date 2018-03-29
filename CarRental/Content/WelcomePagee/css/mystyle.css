@@ -1,0 +1,18 @@
+.carousel{
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.carousel-inner{
+	width: 500px;
+	height: 600px;
+}
+
+.carousel-caption{
+	margin-bottom: 400px;
+	background:rgba(3,3,3,0.3);
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
