@@ -1,0 +1,65 @@
+﻿
+@media only screen and (max-width: 700px) {
+    /* For desktop: */
+    /* For desktop: */
+    #option-div2 {
+        width: 100px;
+                margin:0;
+    }
+    #F1{
+    width:100%;
+}
+#F2{
+    width:100%;
+}
+#F3{
+    width:100%;
+}
+#F4{
+    width:100%;
+}
+#F5{
+    width:100%;
+}
+
+#Button_Div{
+    width:100%;
+    margin-right:500px;
+
+}
+#Filter_Button{
+    width:100%;
+}
+
+}
+@media only screen and (max-width: 500px) {
+    /* For desktop: */
+    #option-div2 {
+        width: 100px;
+        margin:0;
+    }
+    #F1{
+    width:100%;
+}
+#F2{
+    width:100%;
+}
+#F3{
+    width:100%;
+}
+#F4{
+    width:100%;
+}
+#F5{
+    width:100%;
+}
+#Button_Div{
+    width:100%;
+    margin-right:500px;
+
+}
+#Filter_Button{
+    width:100%;
+
+}
+}

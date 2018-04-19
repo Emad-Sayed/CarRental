@@ -11,6 +11,6 @@ namespace CarRental.Models
         public User From { get; set; }
         public User To { get; set; }
         public String  Content { get; set; }
-        public Date Email_Date { get; set; }
+        public DateTime Email_Date { get; set; }
         }
     }

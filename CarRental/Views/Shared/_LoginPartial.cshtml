@@ -1,4 +1,8 @@
 ﻿@using Microsoft.AspNet.Identity
+
+<link href="~/Content/WelcomePagee/css/mystyle.css" rel="stylesheet" />
+
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -16,7 +20,22 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <!--Was Login and Register here-->
+        <li>
+            <!-- Single button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" style="margin-top:7px; background-color:black" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Setting <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a id="UserName"></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Prefered List</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li>@Html.ActionLink("Log out", "LogOut", "Home")</li>
+                </ul>
+            </div>
+        </li>
     </ul>
 }

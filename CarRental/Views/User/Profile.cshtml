@@ -1,0 +1,101 @@
+﻿@model CarRental.Models.User
+<!--
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+-->
+<!------ Include the above in your HEAD tag ---------->
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<script src="~/Scripts/BarInfo/Profile.js"></script>
+<div class="container">
+    <div class="span3 well">
+        <center>
+            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="~/Content/UsersImage/@Html.DisplayFor(model => model.User_Image)" name=" aboutme" width="140" height="140" class="img-circle"></a>
+            <h3>@Html.DisplayFor(model => model.Fname)   @Html.DisplayFor(model => model.Lname)</h3>
+            <em>click my face for more</em>
+        </center>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">More About @Html.DisplayFor(model => model.Fname) @Html.DisplayFor(model => model.Lname)</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="~/Content/UsersImage/@Html.DisplayFor(model => model.User_Image)" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                        <h3 class="media-heading">@Html.DisplayFor(model => model.Fname)   @Html.DisplayFor(model => model.Lname) <small>Egypt</small></h3>
+                     
+                    </center>
+                    <hr>
+ 
+                        <br>
+                        <div style="margin:auto;width:300px">
+
+                            <form action="UpdateImage" enctype="multipart/form-data"  method="post" id="Myform" class="form-horizontal" onsubmit="return UpdateImage()">
+                                <div id="D1" class="form-group">
+                                    <label id="L1" for="usr">First Name:</label>
+                                    <input id="Inp1" type="text" class="form-control" value=@Html.DisplayFor(model => model.Fname) id="Fname">
+                                    <label style="display:none" id="Error_FNAME" class="col-sm-8 control-label" for="inputError">
+                                        Invalid First Name
+                                    </label>
+                                </div>
+                                <div id="D2" class="form-group">
+                                    <label id="L2" for="usr">Last Name:</label>
+                                    <input id="Inp2" type="text" class="form-control" value=@Html.DisplayFor(model => model.Lname) id="Lname">
+                                    <label style="display:none" id="Error_LNAME" class="col-sm-8 control-label" for="inputError">
+                                        Invalid Last Name
+                                    </label>
+                                </div>
+                                <div id="D3" class="form-group">
+                                    <label id="L3" for="usr">Email:</label>
+                                    <input id="Inp3" type="text" class="form-control" value=@Html.DisplayFor(model => model.Email) id="Email">
+                                    <label style="display:none" id="Error_EMAIL" class="col-sm-8 control-label" for="inputError">
+                                        Invalid Email
+                                    </label>
+                                </div>
+                                <div id="D4" class="form-group">
+                                    <label for="usr">Phone:</label>
+                                    <input id="Inp4" type=" text" class="form-control" value=@Html.DisplayFor(model => model.Phone) id="Phone">
+                                    <label style="display:none" id="Error_PHONE" class="col-sm-8 control-label" for="inputError">
+                                        Invalid Phone
+                                    </label>
+                                </div>
+                                <div style="display:none" id="D5" class="form-group">
+                                    <label for="usr">Old Password:</label>
+                                    <input id="Inp5" type=" text" class="form-control" id="Old">
+                                </div>
+                                <div style="display:none" id="D6" class="form-group">
+                                    <label for="usr">New Password:</label>
+                                    <input id="Inp6" type=" text" class="form-control" id="New">
+                                </div>
+                                <div style="display:none" id="D7" class="form-group">
+                                    <label for="usr">Confirm Password:</label>
+                                    <input id="Inp7" type=" text" class="form-control" id="Confirm">
+                                </div>
+                                <div style="display:none" id="D8" class="form-group">
+                                    <label for="usr">Select Image:</label>
+                                    <input id="Inp8" type="file" class="form-control" name="Image" id="Image">
+                                </div>
+                                <input id="SubmitImage" style="display:none" type="submit" class="btn btn-default" value="Submit" />
+                            </form>
+                        </div>
+
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button id="Update" type="button" class="btn btn-default">Update My Information</button>
+                        <button id="UpdateImage"  type="button" class="btn btn-default">Change Image</button>
+                        <button id="ChangePassword" type="button" class="btn btn-default">Change Password</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

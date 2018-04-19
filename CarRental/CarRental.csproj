@@ -159,10 +159,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\Operations.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Data\MyDBContext.cs" />
+    <Compile Include="Filters\IsAdmin.cs" />
+    <Compile Include="Filters\IsLogged.cs" />
     <Compile Include="Filters\TestingFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,14 +199,50 @@
     <Compile Include="Migrations\MyEdits\201803281443114_RentedCars_Adding.Designer.cs">
       <DependentUpon>201803281443114_RentedCars_Adding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MyEdits\201803301241365_AddImageToCar.cs" />
+    <Compile Include="Migrations\MyEdits\201803301241365_AddImageToCar.Designer.cs">
+      <DependentUpon>201803301241365_AddImageToCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201803301736331_AddDataAnnotaion1.cs" />
+    <Compile Include="Migrations\MyEdits\201803301736331_AddDataAnnotaion1.Designer.cs">
+      <DependentUpon>201803301736331_AddDataAnnotaion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804021227002_AddCategpryDescriptionAndCarAdvantages.cs" />
+    <Compile Include="Migrations\MyEdits\201804021227002_AddCategpryDescriptionAndCarAdvantages.Designer.cs">
+      <DependentUpon>201804021227002_AddCategpryDescriptionAndCarAdvantages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804021614278_AddImageToUser.cs" />
+    <Compile Include="Migrations\MyEdits\201804021614278_AddImageToUser.Designer.cs">
+      <DependentUpon>201804021614278_AddImageToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804041106351_DeleteDates.cs" />
+    <Compile Include="Migrations\MyEdits\201804041106351_DeleteDates.Designer.cs">
+      <DependentUpon>201804041106351_DeleteDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804041357519_CarValidationUpdate.cs" />
+    <Compile Include="Migrations\MyEdits\201804041357519_CarValidationUpdate.Designer.cs">
+      <DependentUpon>201804041357519_CarValidationUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804041445364_UpdateRentedCar.cs" />
+    <Compile Include="Migrations\MyEdits\201804041445364_UpdateRentedCar.Designer.cs">
+      <DependentUpon>201804041445364_UpdateRentedCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804061638365_AddUserBalance.cs" />
+    <Compile Include="Migrations\MyEdits\201804061638365_AddUserBalance.Designer.cs">
+      <DependentUpon>201804061638365_AddUserBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MyEdits\201804081248565_AddPrefers.cs" />
+    <Compile Include="Migrations\MyEdits\201804081248565_AddPrefers.Designer.cs">
+      <DependentUpon>201804081248565_AddPrefers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\MyEdits\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Date.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Prefers.cs" />
     <Compile Include="Models\RentedCar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserType.cs" />
@@ -211,16 +250,29 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminPage\css\AddCar.css" />
+    <Content Include="Content\AdminPage\css\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\WelcomePagee\HomeResponsive.css" />
+    <Content Include="Content\WelcomePagee\css\navstyle.css" />
     <Content Include="Docs\Migrations.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AdminPage\AdminTables.js" />
+    <Content Include="Scripts\AdminPage\AdminPage2.js" />
+    <Content Include="Scripts\AdminPage\CarsTables.js" />
+    <Content Include="Scripts\AdminPage\CategoryTables.js" />
+    <Content Include="Scripts\AdminPage\RenderingTables.js" />
+    <Content Include="Scripts\AdminPage\UsersTables.js" />
+    <Content Include="Scripts\BarInfo\BarInfo.js" />
+    <Content Include="Scripts\BarInfo\Profile.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CarsPage\Cars.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -228,6 +280,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LoginPage\antique-auto-automobile-358160.jpg" />
+    <Content Include="Scripts\LoginPage\login.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -243,31 +297,22 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Welcome\Index.cshtml" />
+    <Content Include="Views\Welcome\LoginPage.cshtml" />
+    <Content Include="Views\User\HomePage.cshtml" />
+    <Content Include="Views\Admin\AdminPanel.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\WelcomePagee\css\" />
+    <Folder Include="Content\CarsImage\" />
+    <Folder Include="Content\UsersImage\" />
+    <Folder Include="Content\WelcomePagee\images\" />
     <Folder Include="Content\WelcomePagee\img\" />
-    <Folder Include="images\" />
-    <Folder Include="img\" />
     <Folder Include="Scripts\WelcomePagee\js\" />
-    <Folder Include="scss\" />
-    <Folder Include="vendor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -297,6 +342,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\MyEdits\201803281443114_RentedCars_Adding.resx">
       <DependentUpon>201803281443114_RentedCars_Adding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201803301241365_AddImageToCar.resx">
+      <DependentUpon>201803301241365_AddImageToCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201803301736331_AddDataAnnotaion1.resx">
+      <DependentUpon>201803301736331_AddDataAnnotaion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804021227002_AddCategpryDescriptionAndCarAdvantages.resx">
+      <DependentUpon>201804021227002_AddCategpryDescriptionAndCarAdvantages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804021614278_AddImageToUser.resx">
+      <DependentUpon>201804021614278_AddImageToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804041106351_DeleteDates.resx">
+      <DependentUpon>201804041106351_DeleteDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804041357519_CarValidationUpdate.resx">
+      <DependentUpon>201804041357519_CarValidationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804041445364_UpdateRentedCar.resx">
+      <DependentUpon>201804041445364_UpdateRentedCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804061638365_AddUserBalance.resx">
+      <DependentUpon>201804061638365_AddUserBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MyEdits\201804081248565_AddPrefers.resx">
+      <DependentUpon>201804081248565_AddPrefers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

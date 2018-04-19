@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHEELS</title>
+    @Styles.Render("~/Content/WelcomePagee/css/mystyle.css")
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/WelcomePagee/css/navstyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/BarInfo/BarInfo.js"></script>
+
+
+    <link href="~/Content/AdminPage/css/style.css" rel="stylesheet" />
+    <script src="~/Scripts/AdminPage/AdminTables.js"></script>
+    <script src="~/Scripts/AdminPage/UsersTables.js"></script>
+    <script src="~/Scripts/AdminPage/CarsTables.js"></script>
+    <script src="~/Scripts/AdminPage/RenderingTables.js"></script>
+    <script src="~/Scripts/AdminPage/CategoryTables.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">WHEELS</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/HomePage">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Favourits</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Setting <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a id="UserName" href="#"></a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Profile">Profile</a></li>
+                                    <li style="display:none" id="Dash"><a href="/Dashboard">Dashboard</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/LogOut">LogOut</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="glyphicon glyphicon-bell notification-icon"></i>
+                                    (<b>5</b>)
+                                </a>
+                                <ul class="dropdown-menu notify-drop">
+                                    <div class="notify-drop-title">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">Bildirimler (<b>2</b>)</div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right"><a href="" class="rIcon allRead" data-tooltip="tooltip" data-placement="bottom" title="tümü okundu."><i class="fa fa-dot-circle-o"></i></a></div>
+                                        </div>
+                                    </div>
+                                    <!-- end notify title -->
+                                    <!-- notify content -->
+                                    <div class="drop-content">
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                                                <a href="">Ahmet</a> yorumlad?. <a href="">Cicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
+
+                                                <hr>
+                                                <p class="time">?imdi</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                                                <a href="">Ahmet</a> yorumlad?. <a href="">Cicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
+                                                <p>Lorem ipsum sit dolor amet consilium.</p>
+                                                <p class="time">1 Saat ?nce</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                                                <a href="">Ahmet</a> yorumlad?. <a href="">Cicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
+                                                <p>Lorem ipsum sit dolor amet consilium.</p>
+                                                <p class="time">29 Dakika ?nce</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                                                <a href="">Ahmet</a> yorumlad?. <a href="">Cicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
+                                                <p>Lorem ipsum sit dolor amet consilium.</p>
+                                                <p class="time">Dün 13:18</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">
+                                                <a href="">Ahmet</a> yorumlad?. <a href="">Cicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
+                                                <p>Lorem ipsum sit dolor amet consilium.</p>
+                                                <p class="time">2 Hafta ?nce</p>
+                                            </div>
+                                        </li>
+                                    </div>
+                                    <div class="notify-drop-footer text-center">
+                                        <a href=""><i class="fa fa-eye"></i> Tümünü G?ster</a>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+
+            </nav>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a id="Users" href="#">Users</a>
+                </li>
+                <li>
+                    <a id="Cars" href="#">Cars</a>
+                </li>
+                <li>
+                    <a id="Categories" href="#">Categories</a>
+                </li>
+                <li>
+                    <a id="Rendering" href="#">Rendering</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inserting <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Dropdown heading</li>
+                        <li><a href="#">Insert Category</a></li>
+                        <li><a href="AddCarPage">Insert Car</a></li>
+                        <li><a href="#">Inser Advertisements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button style="margin-top:100px" type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+
+              
+            @RenderBody()
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /#wrapper -->
+    </div>
+    <script>
+        $(function () {
+            $('[data-tooltip="tooltip"]').tooltip()
+        });
+    </script>
+
+
+
+</body>
+</html>

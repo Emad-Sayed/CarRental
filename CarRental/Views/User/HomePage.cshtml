@@ -1,0 +1,46 @@
+﻿
+@{
+   Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Home Page";
+    Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+
+    Response.Cache.SetNoStore();
+}
+<script src="~/Scripts/CarsPage/Cars.js"></script>
+<link href="~/Content/WelcomePagee/HomeResponsive.css" rel="stylesheet" />
+<div id="option-div" class="form-group well " style="width: 250px;margin: auto">
+    <label for="sel1">Search By</label>
+    <select id="Options" class="form-control">
+        <option disabled selected value>  </option>
+        <option>Category</option>
+        <option>Model</option>
+        <option>Color</option>
+        <option>Number Of Seats</option>
+        <option>All</option>
+
+    </select>
+    <input  id="search" type="text" class="form-control" name="search" placeholder="">
+
+    <button disabled id="Cars_Number_Button" style="margin-left: 1px; width: 210px;" class="btn btn-info info_btn" type="button">
+    </button>
+
+    </div>
+
+
+    <hr id="Line">
+    <div id="Spinner" style="margin: auto;width: 5px">
+        <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+    </div>
+<div id="option-div2" class="form-group " style="width: 750px;margin: auto">
+
+</div>
+    <div class="container">
+
+        <div class="row" id="CarsContainer"></div>
+    </div>
+
+
+
+
+
