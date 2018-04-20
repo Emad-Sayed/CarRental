@@ -225,7 +225,8 @@ function AddImageToCar(car)
     }
  if(flag==0)
  {
-     
+     alert(car.ID);
+     Data.append("Car_ID", car.ID);
      Data.append("Image", file);
      Data.append("Details", file2);
      var Setting = {

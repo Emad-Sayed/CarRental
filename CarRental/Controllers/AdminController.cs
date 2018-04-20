@@ -258,9 +258,34 @@ namespace CarRental.Controllers
             }
         [IsLogged]
         [IsAdmin]
-        public ActionResult UpdateCarImage()
+        public ActionResult UpdateCarImage(int Car_ID)
             {
-            return Json("");
+            HttpPostedFileBase ImageViewFile = Request.Files["Image"];
+            HttpPostedFileBase ImageDetailsFile = Request.Files["Details"];
+            //ImageViewFile.SaveAs(Server.MapPath("~/Content/UsersImage/") + file.FileName);
+            Image ViewImage = Image.FromStream(ImageViewFile.InputStream, true, true);
+            Image DetailsImage = Image.FromStream(ImageDetailsFile.InputStream, true, true);
+            if (ViewImage.Height != 250 && ViewImage.Width != 250)
+                {
+                return Json("View Image Must Be 250*250 Dimentions");
+                }
+            if (DetailsImage.Height != 640 && DetailsImage.Width != 960)
+                {
+                return Json("Details Image Must Be 960*640 Dimentions");
+                }
+            Car car = db.Cars.Include("Car_Category").Where(c => c.ID == Car_ID).First();
+            car.Image = ImageViewFile.FileName;
+            try
+                {
+                db.SaveChanges();
+                ImageViewFile.SaveAs(Server.MapPath("~/Content/CarsImage/") + ImageViewFile.FileName);
+                ImageDetailsFile.SaveAs(Server.MapPath("~/Content/CarsImageDetails/") + ImageViewFile.FileName); 
+                return Json("true");
+                }
+            catch(Exception E)
+                {
+                return Json("false");
+                }
             }
 
         }
