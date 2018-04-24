@@ -375,8 +375,15 @@ function Details(element) {
     Submit_Form.setAttribute("id", DetailedCar.ID);
     Submit_Form.setAttribute("onclick", "Pay(this)");
 
+    var Submit_Form2 = document.createElement("button");
+    Submit_Form2.setAttribute("class", "btn btn-warning");
+    Submit_Form2.setAttribute("style", "margin-top:10px;margin-left:10px");
+    Submit_Form2.setAttribute("id", DetailedCar.ID);
+    Submit_Form2.setAttribute("onclick", "Paypal(this)");
 
-    Submit_Form.innerHTML = "Pay For this Peroid";
+
+    Submit_Form.innerHTML = "Cash For this Peroid";
+    Submit_Form2.innerHTML = "Paypal For this Peroid";
 
     var Alter = document.createElement("div");
     Alter.setAttribute("id", "Pay_Alter");
@@ -390,6 +397,7 @@ function Details(element) {
     Row_5Plus.appendChild(Row_5Plus_Hint);
     Row_5Plus.appendChild(Last_Hint_Div);
     Row_5Plus.appendChild(Submit_Form);
+    Row_5Plus.appendChild(Submit_Form2);
     Row_5Plus.appendChild(Alter);
 
     Sub_Main_Div.appendChild(Row_5Plus);

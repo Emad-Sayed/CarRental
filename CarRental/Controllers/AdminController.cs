@@ -61,6 +61,12 @@ namespace CarRental.Controllers
             }
         [IsLogged]
         [IsAdmin]
+        public ActionResult GetAvailableCars()
+            {
+            return Json(db.Cars.Include("Car_Category").Where(c=>c.State==0).ToList(), JsonRequestBehavior.AllowGet);
+            }
+        [IsLogged]
+        [IsAdmin]
         public ActionResult BlockUser(int id)
             {
             User user = db.Users.Find(id);
@@ -286,6 +292,22 @@ namespace CarRental.Controllers
                 {
                 return Json("false");
                 }
+            }
+        public ActionResult Chart()
+            {
+            List<float> Statistics = new List<float>();
+            float Avilable = db.Cars.Where(c=>c.State==0).ToList().Count;
+            float BusyCars = db.Cars.Where(c => c.State == 1).ToList().Count;
+            float Rented = db.RentedCars.ToList().Count;
+            float Unavailbe = BusyCars - Rented;
+            float allCars = Avilable + BusyCars;
+
+
+            Statistics.Add(Avilable / allCars*100);
+            Statistics.Add(Rented / allCars * 100);
+            Statistics.Add(Unavailbe / allCars * 100);
+
+            return Json(Statistics);
             }
 
         }

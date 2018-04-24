@@ -35,5 +35,18 @@ function ValidateData() {
         alert("Password not math the confirm Password");
         return false;
     }
-    return true;
+    $.ajax({
+        type: 'POST',
+        url: '/CheckMailExists?Mail=' + document.getElementById("Email").value,
+        success: function (data) {
+            alert(data)
+            if (data == 'false')
+                return true;
+            else
+            {
+                alert("Email Exists");
+                return false;
+            }
+        }
+    });
 }

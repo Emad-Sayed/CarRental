@@ -263,8 +263,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AdminPage\AdminTables.js" />
     <Content Include="Scripts\AdminPage\AdminPage2.js" />
+    <Content Include="Scripts\AdminPage\AvailableTables.js" />
     <Content Include="Scripts\AdminPage\CarsTables.js" />
     <Content Include="Scripts\AdminPage\CategoryTables.js" />
+    <Content Include="Scripts\AdminPage\Chart.js" />
     <Content Include="Scripts\AdminPage\RenderingTables.js" />
     <Content Include="Scripts\AdminPage\UsersTables.js" />
     <Content Include="Scripts\BarInfo\BarInfo.js" />

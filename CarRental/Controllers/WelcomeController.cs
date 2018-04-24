@@ -59,5 +59,12 @@ namespace CarRental.Controllers
                 }
             return View("LoginPage", user);
             }
+        public ActionResult CheckMailExists(String Mail)
+            {
+            var mail = db.Users.Where(u => u.Email == Mail);
+            if (mail.Any())
+                return Json("true");
+            return Json("false");
+            }
         }
     }

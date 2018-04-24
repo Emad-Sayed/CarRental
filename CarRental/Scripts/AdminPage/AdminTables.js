@@ -2,6 +2,7 @@
 var Cars;
 var Rendering;
 var Categories;
+var Available;
 $(document).ready(function () {
     var trigger = $('.hamburger'),
         overlay = $('.overlay'),
@@ -68,9 +69,29 @@ $("#Rendering").click(function () {
             }
     });
 });
+$("#Available").click(function () {
+    ClearAll();
+    $.ajax({
+        type: 'GET',
+        url: '/GetAvailableCars',
+        success: function (data) {
+            AddHead_Avilables();
+            Available = data;
+            for (var i = 0; i < data.length; i++) {
+                AddRowAvailable(data[i].ID, data[i].Model, data[i].price, data[i].NumberOfSeats, data[i].Car_Category.Name, data[i].State);
+                Available[i].Cat_NAME = data[i].Car_Category.Name;
+                Available[i].Cat_Desc = data[i].Car_Category.Description;
+            }
+        }
+    });
+});
 $("#Categories").click(function () {
     CategoryView();
 });
+$("#Chart").click(function () {
+    ChartDraw();
+});
+
 
 });
 function CarView()

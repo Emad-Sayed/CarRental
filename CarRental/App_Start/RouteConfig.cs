@@ -24,6 +24,11 @@ namespace CarRental
             defaults: new { controller = "Welcome", action = "LoginCheck" }
             );
             routes.MapRoute(
+name: "CheckMailExists",
+url: "CheckMailExists",
+defaults: new { controller = "Welcome", action = "CheckMailExists" }
+);
+            routes.MapRoute(
             name: "HomePage",
             url: "HomePage",
             defaults: new { controller = "User", action = "HomePage" }
@@ -103,6 +108,11 @@ name: "CheckEndDate",
 url: "CheckEndDate",
 defaults: new { controller = "Admin", action = "CheckEndDate" }
 );
+            routes.MapRoute(
+name: "GetAvailableCars",
+url: "GetAvailableCars",
+defaults: new { controller = "Admin", action = "GetAvailableCars" }
+);
        
             routes.MapRoute(
 name: "BlockUser",
@@ -168,6 +178,11 @@ defaults: new { controller = "Admin", action = "AddCategory" }
 name: "AddCar",
 url: "AddCar",
 defaults: new { controller = "Admin", action = "AddCar" }
+);
+                                    routes.MapRoute(
+name: "Chart",
+url: "Chart",
+defaults: new { controller = "Admin", action = "Chart" }
 );
       
             routes.MapRoute(
