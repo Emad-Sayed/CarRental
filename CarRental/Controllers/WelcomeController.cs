@@ -52,6 +52,12 @@ namespace CarRental.Controllers
             user.User_Image = "Defult.jpg";
             if (ModelState.IsValid)
                 {
+                var mailexist = db.Users.Where(m => m.Email == user.Email);
+                if(mailexist.Any())
+                    {
+                    ModelState.AddModelError("Email", "Email already exists !!");
+                    return View("LoginPage", user);
+                    }
                 SendingMail.SendEmail(user.Email, "WHEELS registration", "You are now a member of WHEELS Family");
                 db.Users.Add(user);
                 db.SaveChanges();

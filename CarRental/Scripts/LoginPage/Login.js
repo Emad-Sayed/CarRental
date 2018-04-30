@@ -35,7 +35,7 @@ function ValidateData() {
         alert("Password not math the confirm Password");
         return false;
     }
-    $.ajax({
+   /* $.ajax({
         type: 'POST',
         url: '/CheckMailExists?Mail=' + document.getElementById("Email").value,
         success: function (data) {
@@ -48,5 +48,6 @@ function ValidateData() {
                 return false;
             }
         }
-    });
+    });*/
+    return true;
 }
