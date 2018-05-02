@@ -390,6 +390,8 @@ function Details(element) {
     Alter.setAttribute("style", "margin-top:10px;display:none");
     Alter.setAttribute("class", "alert alert-danger");
 
+
+    
     Last_Hint_Div.appendChild(Span_);
     Last_Hint_Div.appendChild(input_end_date);
 
@@ -528,12 +530,17 @@ function Get_Car(element)
 }
 function Pay(element)
 {
+    
     var Days_Number = document.getElementById("End_Date_Input").value;
-    if (Days_Number<10000000) {
+    if (Days_Number < 10000000) {
+        var spinner = document.createElement("div");
+        spinner.innerHTML = "<div id=Pay_Spinner style=" + "'" + "margin: auto;width: 5px" + "'" + "><i class=" + "'" + "fa fa-spinner fa-spin" + "'" + " style=font-size:24px></i></div>"
+        document.getElementById("Rendering_Form").appendChild(spinner);
         $.ajax({
             type: 'POST',
             url: '/Pay?Car_ID=' + element.id + '&Days_Number=' + Days_Number,
             success: function (data) {
+                document.getElementById("Pay_Spinner").style.display = "none";
                 if (data == 'true') {
                     var Alter = document.getElementById("Pay_Alter");
                     Alter.setAttribute("class", "alert alert-success");
